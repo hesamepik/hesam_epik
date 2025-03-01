@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه محصول</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="singleProduct.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-button">بازگشت</a>
+    </header>
+    <main id="product-container">
+        <!-- اطلاعات محصول اینجا نمایش داده می‌شود -->
+    </main>
+</body>
+</html>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+header {
+    padding: 15px;
+    background-color: #007bff;
+    text-align: center;
+}
+
+.back-button {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#product-container {
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#product-container img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+#product-container h1 {
+    margin: 15px 0;
+}
+
+#product-container p {
+    color: #555;
+}
+
+.price {
+    font-size: 22px;
+    color: #d9534f;
+    margin: 10px 0;
+}
+
+.buy-button {
+    display: inline-block;
+    background: #ffcc00;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.buy-button:hover {
+    background: #ff9900;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get("id");
+    
+    if (!productId) {
+        document.getElementById("product-container").innerHTML = "محصولی یافت نشد!";
+        return;
+    }
+    
+    const allProducts = await fetch("https://fakestoreapi.com/products").then(res => res.json());
+    const product = allProducts.find(p => p.id == productId);
+    
+    if (!product) {
+        document.getElementById("product-container").innerHTML = "محصولی یافت نشد!";
+        return;
+    }
+    
+    document.getElementById("product-container").innerHTML = `
+        <img src="${product.image}" alt="${product.title}">
+        <h1>${product.title}</h1>
+        <p>${product.description}</p>
+        <p class="price">$${product.price}</p>
+        <a href="#" class="buy-button">خرید</a>
+    `;
+});
+
+// اضافه کردن رویداد کلیک به محصولات در صفحه اصلی
+const mainContent = document.getElementById("prodct");
+if (mainContent) {
+    mainContent.addEventListener("click", (event) => {
+        const productElement = event.target.closest("#s");
+        if (productElement) {
+            const productId = productElement.getAttribute("data-id");
+            if (productId) {
+                window.location.href = `product.html?id=${productId}`;
+            }
+        }
+    });
+}
+</script>

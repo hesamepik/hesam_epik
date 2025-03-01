@@ -1,0 +1,84 @@
+header{
+
+    display:flex;
+    justify-content: space-between;
+    padding: 30PX 0;
+    margin-bottom: 30px ;
+}
+
+header h3 {
+    color: blue;
+    font-size:1.6 rem;
+}
+header a,
+header button{
+    color: black;
+    text-decoration: none;
+    background-color:#dadada;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.1s ease-in;
+    margin-left: 20px;
+    cursor: pointer;
+}
+header button {
+
+    color: rgb(255, 0, 0);
+}
+header i {
+    margin-left: 10px;
+}
+header a:hover{
+
+    color: #ffffff;
+    background-color: black;
+}
+
+header button:hover{
+    color: #ffffff;
+    background-color: black;
+}
+#card {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+    background-color: #c7c7c7;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+h1 {
+    margin: 50px 0 40px;
+}
+#card h3 {
+    display: flex;
+    background-color: blue;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size:  1.4rem;
+    font-weight: 600;
+    border-radius: 8px;
+    justify-content: center;
+}
+#card div {
+    background-color: blue;
+    border-radius: 10px ;
+    padding: 15px;
+}
+ #card p{
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+
+}
+#card i {
+    margin-right: 5px;
+
+}

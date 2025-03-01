@@ -1,0 +1,65 @@
+#container{
+
+
+
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-top: 150px;
+color: rgb(0, 0, 0);
+
+
+
+}
+
+h1 {
+
+    font-size: 2.5rem; 
+    margin: bottom 40px; 
+    padding: 10PX;
+    color: rgb(62, 25, 224);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 50px;
+}
+input {
+    border: 1px solid silver;
+    margin-bottom: 50px;
+    padding: 15px;
+    width: 300px;
+    font-size: 1rem;
+    columns: rgb(15, 15, 68);
+    border-radius: 10px;
+
+}
+input:focus{
+    outline: none;
+    border-color: blue rgb(3, 3, 26);
+}
+button{
+    border: none;
+    background-color: blue;
+    padding: 15px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+}
+button:hover{
+    background-color: rgb(99, 95, 90);
+}
+
+a{
+    padding: 10px;
+}
+h1 img{
+
+height: 200px;
+width: 200px;
+
+}
